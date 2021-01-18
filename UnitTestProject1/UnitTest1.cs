@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProject1
@@ -8,6 +9,8 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
+            var rsa = RSA.Create();
+            Assert.IsNotNull(rsa);
         }
     }
 }
