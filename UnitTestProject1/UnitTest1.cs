@@ -53,18 +53,18 @@ namespace UnitTestProject1
             Assert.NotNull(encryptedData);
         }
 
-        [Fact]
-        public void TestAesGcm()
-        {
-            var key = new byte[16];
-            RandomNumberGenerator.Fill(key);
-            using var aes = new AesGcm(key);
+        //[Fact]
+        //public void TestAesGcm()
+        //{
+        //    var key = new byte[16];
+        //    RandomNumberGenerator.Fill(key);
+        //    using var aes = new AesGcm(key);
 
-            var encryptedData = new byte[128];
-            var tag = new byte[12];
-            aes.Encrypt(new byte[12], new byte[128], encryptedData, tag);
-            Assert.NotNull(encryptedData);
-        }
+        //    var encryptedData = new byte[128];
+        //    var tag = new byte[12];
+        //    aes.Encrypt(new byte[12], new byte[128], encryptedData, tag);
+        //    Assert.NotNull(encryptedData);
+        //}
 
         [Fact]
         public void TestX509Certificate()
