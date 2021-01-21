@@ -8,7 +8,8 @@ on:
 
 jobs:
   build:
-
+    env: 
+      CLR_OPENSSL_VERSION_OVERRIDE: /usr/local/Cellar/openssl@1.1/1.1.1i
     runs-on: macos-latest
 
     steps:
