@@ -1,43 +1,42 @@
 using System.Security.Cryptography;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace UnitTestProject1
 {
-    [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
+        [Fact]
         public void TestRsa()
         {
             var rsa = RSA.Create();
-            Assert.IsNotNull(rsa);
+            Assert.NotNull(rsa);
 
             var encryptedData = rsa.Encrypt(new byte[16], RSAEncryptionPadding.OaepSHA256);
-            Assert.IsNotNull(encryptedData);
+            Assert.NotNull(encryptedData);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestEcdh()
         {
             var ecdh = ECDiffieHellman.Create();
             var ecdh2 = ECDiffieHellman.Create();
-            Assert.IsNotNull(ecdh);
+            Assert.NotNull(ecdh);
 
             var derivedKey = ecdh.DeriveKeyFromHash(ecdh2.PublicKey, HashAlgorithmName.SHA256);
-            Assert.IsNotNull(derivedKey);
+            Assert.NotNull(derivedKey);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestSha256()
         {
             var sha256 = HashAlgorithm.Create("SHA256");
-            Assert.IsNotNull(sha256);
+            Assert.NotNull(sha256);
 
             var hashedData = sha256.ComputeHash(new byte[16]);
-            Assert.IsNotNull(hashedData);
+            Assert.NotNull(hashedData);
         }
 
-        [TestMethod]
+        [Fact]
         public void TestAes()
         {
             var key = new byte[16];
@@ -50,7 +49,7 @@ namespace UnitTestProject1
             var encryptor = aes.CreateEncryptor();
 
             var encryptedData = encryptor.TransformFinalBlock(new byte[16], 0, 16);
-            Assert.IsNotNull(encryptedData);
+            Assert.NotNull(encryptedData);
         }
     }
 }
