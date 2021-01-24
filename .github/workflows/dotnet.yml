@@ -11,7 +11,7 @@ jobs:
     runs-on: macos-latest
     env: 
       DYLD_FALLBACK_LIBRARY_PATH: /usr/local/opt/openssl@1.1/lib
-      CLR_OPENSSL_VERSION_OVERRIDE: 1.1.1i 
+      CLR_OPENSSL_VERSION_OVERRIDE: 1.1 
     steps:
     - uses: actions/checkout@v2
  #   - name: Set DYLD env variable
